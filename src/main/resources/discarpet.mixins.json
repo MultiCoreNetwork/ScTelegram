@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "de.replaceitem.discarpet.mixins",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "CarpetEvent_Mixin",
+    "MinecraftChat_Mixin"
+  ],
+  "client": [],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

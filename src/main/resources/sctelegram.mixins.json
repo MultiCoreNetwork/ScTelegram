@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "it.multicoredev.stgi.mixins",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "CrashReport_noopMixin"
+  ],
+  "client": [],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
