@@ -3,7 +3,8 @@
   "package": "it.multicoredev.stgi.mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "CrashReport_noopMixin"
+    "CrashReport_noopMixin",
+    "MinecraftServer_chatEventMixin"
   ],
   "client": [],
   "server": [],

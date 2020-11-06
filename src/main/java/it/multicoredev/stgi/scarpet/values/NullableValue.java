@@ -1,14 +1,12 @@
 package it.multicoredev.stgi.scarpet.values;
 
+import carpet.script.value.*;
+import net.minecraft.entity.Entity;
 import org.telegram.telegrambots.meta.api.objects.ChatLocation;
 import org.telegram.telegrambots.meta.api.objects.ChatPermissions;
 import org.telegram.telegrambots.meta.api.objects.ChatPhoto;
 import org.telegram.telegrambots.meta.api.objects.Message;
 
-import carpet.script.value.NullValue;
-import carpet.script.value.NumericValue;
-import carpet.script.value.StringValue;
-import carpet.script.value.Value;
 import it.multicoredev.stgi.scarpet.values.telegram.ChatLocationValue;
 import it.multicoredev.stgi.scarpet.values.telegram.ChatPermissionsValue;
 import it.multicoredev.stgi.scarpet.values.telegram.ChatPhotoValue;
@@ -37,6 +35,10 @@ public class NullableValue {
     }
     public static Value numeric(Long arg){
         if(arg != null) return new NumericValue(arg);
+        return new NullValue();
+    }
+    public static Value entity(Entity arg){
+        if(arg != null) return new EntityValue(arg);
         return new NullValue();
     }
 
