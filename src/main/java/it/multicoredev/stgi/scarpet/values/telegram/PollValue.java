@@ -5,11 +5,9 @@ import org.telegram.telegrambots.meta.api.objects.polls.Poll;
 import java.util.Arrays;
 
 import carpet.script.value.ListValue;
-import carpet.script.value.MapValue;
 import carpet.script.value.NumericValue;
 import carpet.script.value.StringValue;
 import it.multicoredev.stgi.scarpet.values.NullableValue;
-import it.multicoredev.stgi.scarpet.values.ScTelegramValue;
 
 import static java.util.stream.Collectors.toList;
 

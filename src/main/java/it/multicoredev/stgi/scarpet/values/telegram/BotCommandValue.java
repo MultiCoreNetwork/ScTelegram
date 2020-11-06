@@ -5,7 +5,6 @@ import org.telegram.telegrambots.meta.api.objects.commands.BotCommand;
 import java.util.Arrays;
 
 import carpet.script.value.StringValue;
-import it.multicoredev.stgi.scarpet.values.ScTelegramValue;
 
 
 public class BotCommandValue extends ScTelegramValue {

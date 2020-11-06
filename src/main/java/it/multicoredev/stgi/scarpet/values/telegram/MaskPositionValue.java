@@ -4,10 +4,8 @@ import org.telegram.telegrambots.meta.api.objects.stickers.MaskPosition;
 
 import java.util.Arrays;
 
-import carpet.script.value.MapValue;
 import carpet.script.value.NumericValue;
 import carpet.script.value.StringValue;
-import it.multicoredev.stgi.scarpet.values.ScTelegramValue;
 
 public class MaskPositionValue extends ScTelegramValue {
     public MaskPositionValue(MaskPosition maskPosition) {

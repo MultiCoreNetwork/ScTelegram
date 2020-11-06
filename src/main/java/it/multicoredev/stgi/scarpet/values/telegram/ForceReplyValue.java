@@ -7,7 +7,6 @@ import java.util.Arrays;
 import carpet.script.value.NumericValue;
 import carpet.script.value.StringValue;
 import it.multicoredev.stgi.scarpet.values.NullableValue;
-import it.multicoredev.stgi.scarpet.values.ScTelegramValue;
 
 public class ForceReplyValue extends ScTelegramValue {
     public ForceReplyValue(ForceReplyKeyboard forceReplyKeyboard) {

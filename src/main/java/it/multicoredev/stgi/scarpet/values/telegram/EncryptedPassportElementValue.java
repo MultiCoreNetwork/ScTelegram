@@ -1,14 +1,11 @@
 package it.multicoredev.stgi.scarpet.values.telegram;
 
-import org.telegram.telegrambots.meta.api.objects.passport.EncryptedCredentials;
 import org.telegram.telegrambots.meta.api.objects.passport.EncryptedPassportElement;
 
 import java.util.Arrays;
 
-import carpet.script.value.MapValue;
 import carpet.script.value.StringValue;
 import it.multicoredev.stgi.scarpet.values.NullableValue;
-import it.multicoredev.stgi.scarpet.values.ScTelegramValue;
 
 public class EncryptedPassportElementValue extends ScTelegramValue {
     public EncryptedPassportElementValue(EncryptedPassportElement encryptedPassportElement) {

@@ -3,12 +3,9 @@ package it.multicoredev.stgi.scarpet.values.telegram;
 import org.telegram.telegrambots.meta.api.objects.ChatMember;
 
 import java.util.Arrays;
-import java.util.List;
 
 import carpet.script.value.StringValue;
-import carpet.script.value.Value;
 import it.multicoredev.stgi.scarpet.values.NullableValue;
-import it.multicoredev.stgi.scarpet.values.ScTelegramValue;
 
 public class ChatMemberValue extends ScTelegramValue {
     public ChatMemberValue(ChatMember chatMember) {

@@ -1,4 +1,4 @@
-package it.multicoredev.stgi.scarpet.functions;
+package it.multicoredev.stgi.scarpet.functions.telegram;
 
 import carpet.script.Expression;
 import carpet.script.LazyValue;

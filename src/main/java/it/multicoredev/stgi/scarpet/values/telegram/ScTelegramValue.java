@@ -1,4 +1,4 @@
-package it.multicoredev.stgi.scarpet.values;
+package it.multicoredev.stgi.scarpet.values.telegram;
 
 import java.util.ArrayList;
 import java.util.Arrays;

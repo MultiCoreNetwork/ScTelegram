@@ -21,10 +21,14 @@ import carpet.CarpetServer;
 import carpet.script.CarpetScriptServer;
 import carpet.script.bundled.BundledModule;
 
-import it.multicoredev.stgi.scarpet.functions.*;
 import it.multicoredev.stgi.config.BotConfig;
 import it.multicoredev.stgi.config.Config;
 import it.multicoredev.stgi.scarpet.ScarpetTelegramEvents;
+import it.multicoredev.stgi.scarpet.functions.telegram.Bot;
+import it.multicoredev.stgi.scarpet.functions.telegram.Chats;
+import it.multicoredev.stgi.scarpet.functions.telegram.FileDownload;
+import it.multicoredev.stgi.scarpet.functions.telegram.Members;
+import it.multicoredev.stgi.scarpet.functions.telegram.Messages;
 import it.multicoredev.stgi.telegram.TelegramBot;
 import it.multicoredev.stgi.telegram.TelegramEventHandler;
 

@@ -4,9 +4,7 @@ import org.telegram.telegrambots.meta.api.objects.payments.ShippingAddress;
 
 import java.util.Arrays;
 
-import carpet.script.value.MapValue;
 import carpet.script.value.StringValue;
-import it.multicoredev.stgi.scarpet.values.ScTelegramValue;
 
 public class ShippingAddressValue extends ScTelegramValue {
     public ShippingAddressValue(ShippingAddress shippingAddress) {

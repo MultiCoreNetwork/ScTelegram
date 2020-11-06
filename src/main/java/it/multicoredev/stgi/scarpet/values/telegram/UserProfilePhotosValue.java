@@ -5,7 +5,6 @@ import org.telegram.telegrambots.meta.api.objects.ChatPhoto;
 import java.util.Arrays;
 
 import carpet.script.value.StringValue;
-import it.multicoredev.stgi.scarpet.values.ScTelegramValue;
 
 public class UserProfilePhotosValue extends ScTelegramValue {
     public UserProfilePhotosValue(ChatPhoto chatPhoto) {

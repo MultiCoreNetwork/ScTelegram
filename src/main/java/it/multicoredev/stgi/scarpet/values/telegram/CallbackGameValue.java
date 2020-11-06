@@ -4,9 +4,6 @@ import org.telegram.telegrambots.meta.api.objects.games.CallbackGame;
 
 import java.util.Arrays;
 
-import carpet.script.value.MapValue;
-import it.multicoredev.stgi.scarpet.values.ScTelegramValue;
-
 public class CallbackGameValue extends ScTelegramValue {
     public CallbackGameValue(CallbackGame callbackGame) {
         super(Arrays.asList());

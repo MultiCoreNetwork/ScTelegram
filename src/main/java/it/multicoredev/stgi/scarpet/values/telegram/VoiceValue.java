@@ -4,11 +4,9 @@ import org.telegram.telegrambots.meta.api.objects.Voice;
 
 import java.util.Arrays;
 
-import carpet.script.value.MapValue;
 import carpet.script.value.NumericValue;
 import carpet.script.value.StringValue;
 import it.multicoredev.stgi.scarpet.values.NullableValue;
-import it.multicoredev.stgi.scarpet.values.ScTelegramValue;
 
 public class VoiceValue extends ScTelegramValue {
     public VoiceValue(Voice voice) {
