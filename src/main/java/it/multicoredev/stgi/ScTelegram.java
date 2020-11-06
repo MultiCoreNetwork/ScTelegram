@@ -1,5 +1,6 @@
 package it.multicoredev.stgi;
 
+import carpet.script.CarpetExpression;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.server.MinecraftServer;
 
@@ -19,6 +20,8 @@ import carpet.CarpetExtension;
 import carpet.CarpetServer;
 import carpet.script.CarpetScriptServer;
 import carpet.script.bundled.BundledModule;
+
+import it.multicoredev.stgi.scarpet.functions.*;
 import it.multicoredev.stgi.config.BotConfig;
 import it.multicoredev.stgi.config.Config;
 import it.multicoredev.stgi.scarpet.ScarpetTelegramEvents;
@@ -100,5 +103,14 @@ public class ScTelegram implements CarpetExtension {
 
     @Override
     public void onServerClosed(MinecraftServer server) {
+    }
+
+    @Override
+    public void scarpetApi(CarpetExpression expression) {
+        Bot.apply(expression.getExpr());
+        Chats.apply(expression.getExpr());
+        FileDownload.apply(expression.getExpr());
+        Members.apply(expression.getExpr());
+        Messages.apply(expression.getExpr());
     }
 }
