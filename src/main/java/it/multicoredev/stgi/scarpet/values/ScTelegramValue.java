@@ -17,7 +17,8 @@ public class ScTelegramValue extends MapValue {
     public static List listValueToPairList(List<Value> values){
         List<ListValue> pairList = new ArrayList<>();
         for( int i = 0; i < values.size(); i += 2){
-            pairList.add(new ListValue(Arrays.asList(values.get(i), i < values.size()-1 ? values.get(i+1) : new NullValue())));
+            if(i < values.size()-1 && !(values.get(i+1) instanceof NullValue))
+                pairList.add(new ListValue(Arrays.asList(values.get(i), values.get(i+1))));
         }
         return pairList;
     }

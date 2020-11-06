@@ -29,8 +29,8 @@ public class ChatValue extends ScTelegramValue {
                 new StringValue("sticker_set_name"),            NullableValue.string(chat.getStickerSetName()),
                 new StringValue("can_set_sticker_set"),         NullableValue.numeric(chat.getCanSetStickerSet()),
                 new StringValue("linked_chat_id"),              NullableValue.numeric(chat.getLinkedChatId()),
-                new StringValue("location"),                    NullableValue.chatLocation(chat.getLocation()),
-                new StringValue("allMembersAreAdministrators"), NullableValue.numeric(chat.getAllMembersAreAdministrators())
+                new StringValue("location"),                    NullableValue.chatLocation(chat.getLocation())
+                //new StringValue("allMembersAreAdministrators"), NullableValue.numeric(chat.getAllMembersAreAdministrators())
         ));
     }
     @Override

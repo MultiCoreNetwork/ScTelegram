@@ -11,6 +11,7 @@ import org.telegram.telegrambots.meta.api.objects.ChatPhoto;
 import org.telegram.telegrambots.meta.api.objects.Contact;
 import org.telegram.telegrambots.meta.api.objects.Dice;
 import org.telegram.telegrambots.meta.api.objects.Document;
+import org.telegram.telegrambots.meta.api.objects.InputFile;
 import org.telegram.telegrambots.meta.api.objects.Location;
 import org.telegram.telegrambots.meta.api.objects.LoginUrl;
 import org.telegram.telegrambots.meta.api.objects.Message;
@@ -38,6 +39,7 @@ import org.telegram.telegrambots.meta.api.objects.payments.SuccessfulPayment;
 import org.telegram.telegrambots.meta.api.objects.polls.Poll;
 import org.telegram.telegrambots.meta.api.objects.polls.PollAnswer;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardButtonPollType;
 import org.telegram.telegrambots.meta.api.objects.stickers.MaskPosition;
 import org.telegram.telegrambots.meta.api.objects.stickers.Sticker;
 
@@ -64,7 +66,9 @@ import it.multicoredev.stgi.scarpet.values.telegram.DocumentValue;
 import it.multicoredev.stgi.scarpet.values.telegram.GameValue;
 import it.multicoredev.stgi.scarpet.values.telegram.InlineKeyboardMarkupValue;
 import it.multicoredev.stgi.scarpet.values.telegram.InlineQueryValue;
+import it.multicoredev.stgi.scarpet.values.telegram.InputFileValue;
 import it.multicoredev.stgi.scarpet.values.telegram.InvoiceValue;
+import it.multicoredev.stgi.scarpet.values.telegram.KeyboardButtonPollTypeValue;
 import it.multicoredev.stgi.scarpet.values.telegram.LocationValue;
 import it.multicoredev.stgi.scarpet.values.telegram.LoginUrlValue;
 import it.multicoredev.stgi.scarpet.values.telegram.MaskPositionValue;
@@ -349,6 +353,18 @@ public class NullableValue {
     public static Value callbackGame(CallbackGame arg) {
         if (arg != null)
             return new CallbackGameValue(arg);
+        return new NullValue();
+    }
+
+    public static Value keyboardButtonPollType(KeyboardButtonPollType arg) {
+        if (arg != null)
+            return new KeyboardButtonPollTypeValue(arg);
+        return new NullValue();
+    }
+
+    public static Value inputFile(InputFile arg) {
+        if (arg != null)
+            return new InputFileValue(arg);
         return new NullValue();
     }
 }
