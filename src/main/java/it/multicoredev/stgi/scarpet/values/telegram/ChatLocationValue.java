@@ -1,16 +1,19 @@
 package it.multicoredev.stgi.scarpet.values.telegram;
 
-import org.telegram.telegrambots.meta.api.objects.Message;
+import org.telegram.telegrambots.meta.api.objects.ChatLocation;
 
 import java.util.Arrays;
 
 import carpet.script.value.MapValue;
+import carpet.script.value.StringValue;
+import it.multicoredev.stgi.scarpet.values.ScTelegramValue;
 
 
-public class ChatLocationValue extends MapValue {
-    public ChatLocationValue(Message message) {
+public class ChatLocationValue extends ScTelegramValue {
+    public ChatLocationValue(ChatLocation chatLocation) {
         super(Arrays.asList(
-                //todo
+                new StringValue("location"), new LocationValue(chatLocation.getLocation()),
+                new StringValue("address"),  new StringValue(chatLocation.getAddress())
         ));
     }
 

@@ -28,7 +28,7 @@ import it.multicoredev.stgi.telegram.TelegramEventHandler;
 public class ScTelegram implements CarpetExtension {
     public static final String MOD_ID = "sctelegram";
     public static final String MOD_NAME = "ScTelegram";
-    public static final String MOD_VERSION = "0.0.1";
+    public static final String MOD_VERSION = "0.0.2";
 
     public TelegramBotsApi telegramBotsApi;
 
