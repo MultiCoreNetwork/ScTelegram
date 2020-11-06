@@ -5,7 +5,7 @@
   "name": "ScTelegram",
   "description": "Scarpet Telegram Integration",
   "authors": [
-    "BisUmTo", "ReplaceItem"
+    "BisUmTo", "replaceitem"
   ],
   "contributors": [],
   "contact": {},
@@ -24,6 +24,6 @@
   "depends": {
     "minecraft": "1.16.x",
     "fabricloader": ">=0.9.3",
-    "carpet": "1.4.15"
+    "carpet": ">=1.4.15"
   }
 }

@@ -8,9 +8,9 @@ import carpet.script.value.MapValue;
 import carpet.script.value.NumericValue;
 import carpet.script.value.StringValue;
 import it.multicoredev.stgi.scarpet.values.NullableValue;
+import it.multicoredev.stgi.scarpet.values.ScTelegramValue;
 
-
-public class ChatValue extends MapValue {
+public class ChatValue extends ScTelegramValue {
     public ChatValue(Chat chat) {
         super(Arrays.asList(
                 new StringValue("id"),                          new NumericValue(chat.getId()),

@@ -7,6 +7,7 @@ import java.util.Arrays;
 import carpet.CarpetServer;
 import carpet.script.CarpetEventServer.Event;
 import carpet.script.value.StringValue;
+import it.multicoredev.stgi.scarpet.values.telegram.UpdateValue;
 
 public class ScarpetTelegramEvents extends Event {
     public static ScarpetTelegramEvents TELEGRAM_EVENT = new ScarpetTelegramEvents("telegram_event", 2, false) {
@@ -15,7 +16,7 @@ public class ScarpetTelegramEvents extends Event {
             handler.call(
                     () -> Arrays.asList(
                             new StringValue(botUsername),
-                            new StringValue(update.toString())
+                            new UpdateValue(update)
                     ),
                     () -> CarpetServer.minecraft_server.getCommandSource()
             );
