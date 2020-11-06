@@ -18,8 +18,7 @@
     "server": []
   },
   "mixins": [
-    "sctelegram.mixins.json",
-    "discarpet.mixins.json"
+    "sctelegram.mixins.json"
   ],
   "depends": {
     "minecraft": "1.16.x",
