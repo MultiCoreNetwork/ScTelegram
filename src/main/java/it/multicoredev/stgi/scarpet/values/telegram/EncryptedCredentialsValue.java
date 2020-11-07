@@ -18,6 +18,6 @@ public class EncryptedCredentialsValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_encrypted_credentials";
+        return "telegram_encrypted_credentials";
     }
 }

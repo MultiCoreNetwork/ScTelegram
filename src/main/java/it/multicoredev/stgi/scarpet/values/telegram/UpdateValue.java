@@ -28,6 +28,6 @@ public class UpdateValue extends ScTelegramValue {
 
     @Override
     public String getTypeString() {
-        return "sctelegram_update";
+        return "telegram_update";
     }
 }

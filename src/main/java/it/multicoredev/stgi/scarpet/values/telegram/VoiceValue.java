@@ -22,6 +22,6 @@ public class VoiceValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_audio";
+        return "telegram_audio";
     }
 }

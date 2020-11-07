@@ -19,6 +19,6 @@ public class ForceReplyValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_force_reply";
+        return "telegram_force_reply";
     }
 }

@@ -21,6 +21,6 @@ public class ShippingAddressValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_shipping_address";
+        return "telegram_shipping_address";
     }
 }

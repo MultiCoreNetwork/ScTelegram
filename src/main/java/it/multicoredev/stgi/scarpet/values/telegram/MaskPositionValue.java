@@ -20,6 +20,6 @@ public class MaskPositionValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_mask_position";
+        return "telegram_mask_position";
     }
 }

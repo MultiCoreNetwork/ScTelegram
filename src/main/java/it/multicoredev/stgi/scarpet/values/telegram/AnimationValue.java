@@ -27,6 +27,6 @@ public class AnimationValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_animation";
+        return "telegram_animation";
     }
 }

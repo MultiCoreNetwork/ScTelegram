@@ -22,6 +22,6 @@ public class PhotoSizeValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_photo_size";
+        return "telegram_photo_size";
     }
 }

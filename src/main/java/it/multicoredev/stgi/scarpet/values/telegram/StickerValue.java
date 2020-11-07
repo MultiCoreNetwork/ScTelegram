@@ -27,6 +27,6 @@ public class StickerValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_sticker";
+        return "telegram_sticker";
     }
 }

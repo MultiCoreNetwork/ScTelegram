@@ -20,6 +20,6 @@ public class PassportFileValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_passport_file";
+        return "telegram_passport_file";
     }
 }

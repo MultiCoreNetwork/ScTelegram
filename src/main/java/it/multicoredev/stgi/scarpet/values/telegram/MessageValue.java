@@ -67,6 +67,6 @@ public class MessageValue extends ScTelegramValue {
 
     @Override
     public String getTypeString() {
-        return "sctelegram_message";
+        return "telegram_message";
     }
 }

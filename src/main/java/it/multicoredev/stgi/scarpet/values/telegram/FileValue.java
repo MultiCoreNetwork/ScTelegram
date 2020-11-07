@@ -20,6 +20,6 @@ public class FileValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_file";
+        return "telegram_file";
     }
 }

@@ -21,6 +21,6 @@ public class ContactValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_contact";
+        return "telegram_contact";
     }
 }

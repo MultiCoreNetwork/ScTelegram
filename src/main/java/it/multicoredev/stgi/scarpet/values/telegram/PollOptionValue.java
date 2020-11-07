@@ -18,6 +18,6 @@ public class PollOptionValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_poll_option";
+        return "telegram_poll_option";
     }
 }

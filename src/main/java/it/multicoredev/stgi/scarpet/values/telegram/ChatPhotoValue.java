@@ -19,6 +19,6 @@ public class ChatPhotoValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_chat_photo";
+        return "telegram_chat_photo";
     }
 }

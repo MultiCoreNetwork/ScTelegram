@@ -26,6 +26,6 @@ public class EncryptedPassportElementValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_encrypted_passport_element";
+        return "telegram_encrypted_passport_element";
     }
 }

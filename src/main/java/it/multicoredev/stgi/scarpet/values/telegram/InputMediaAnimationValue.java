@@ -25,6 +25,6 @@ public class InputMediaAnimationValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_input_media_animation";
+        return "telegram_input_media_animation";
     }
 }

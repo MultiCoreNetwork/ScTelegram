@@ -34,6 +34,6 @@ public class ChatValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_chat";
+        return "telegram_chat";
     }
 }

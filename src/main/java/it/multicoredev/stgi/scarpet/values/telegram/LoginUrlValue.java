@@ -20,6 +20,6 @@ public class LoginUrlValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_login_url";
+        return "telegram_login_url";
     }
 }

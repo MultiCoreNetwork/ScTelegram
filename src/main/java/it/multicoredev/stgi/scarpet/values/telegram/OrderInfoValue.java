@@ -20,6 +20,6 @@ public class OrderInfoValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_order_info";
+        return "telegram_order_info";
     }
 }

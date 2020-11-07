@@ -22,6 +22,6 @@ public class PollAnswerValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_poll_answer";
+        return "telegram_poll_answer";
     }
 }

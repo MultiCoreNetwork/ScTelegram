@@ -13,7 +13,9 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Objects;
 
 import carpet.CarpetExtension;
@@ -29,6 +31,7 @@ import it.multicoredev.stgi.scarpet.functions.telegram.Chats;
 import it.multicoredev.stgi.scarpet.functions.telegram.FileDownload;
 import it.multicoredev.stgi.scarpet.functions.telegram.Members;
 import it.multicoredev.stgi.scarpet.functions.telegram.Messages;
+import it.multicoredev.stgi.scarpet.functions.telegram.Stickers;
 import it.multicoredev.stgi.telegram.TelegramBot;
 import it.multicoredev.stgi.telegram.TelegramEventHandler;
 
@@ -37,7 +40,8 @@ public class ScTelegram implements CarpetExtension {
     public static final String MOD_NAME = "ScTelegram";
     public static final String MOD_VERSION = "0.0.2";
 
-    public TelegramBotsApi telegramBotsApi;
+    public static TelegramBotsApi telegramBotsApi;
+    public static Map<String,TelegramBot> telegramBots;
 
     static {
         CarpetServer.manageExtension(new ScTelegram());
@@ -68,7 +72,9 @@ public class ScTelegram implements CarpetExtension {
             Config.getInstance().toFile(configFile.toFile());
             for (BotConfig s : Config.getInstance().BOTS) {
                 try {
-                    telegramBotsApi.registerBot(new TelegramBot(s.BOT_USERNAME, s.BOT_TOKEN, new TelegramEventHandler(s.BOT_USERNAME)));
+                    TelegramBot telegramBot = new TelegramBot(s.BOT_USERNAME, s.BOT_TOKEN, new TelegramEventHandler(s.BOT_USERNAME));
+                    telegramBots.put(s.BOT_USERNAME, telegramBot);
+                    telegramBotsApi.registerBot(telegramBot);
                     System.out.println("Collegamento a " + s.BOT_USERNAME + " avvenuto con successo.");
                 } catch (TelegramApiException e) {
                     System.err.println("Problemi nel collegamento a " + s.BOT_USERNAME + ".");
@@ -84,6 +90,7 @@ public class ScTelegram implements CarpetExtension {
 
     public void restartBots() {
         try {
+            telegramBots = new HashMap<>();
             telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
             registerBots();
         } catch (TelegramApiException e) {
@@ -116,5 +123,6 @@ public class ScTelegram implements CarpetExtension {
         FileDownload.apply(expression.getExpr());
         Members.apply(expression.getExpr());
         Messages.apply(expression.getExpr());
+        Stickers.apply(expression.getExpr());
     }
 }

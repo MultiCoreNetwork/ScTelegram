@@ -23,6 +23,6 @@ public class ChatPermissionsValue extends ScTelegramValue {
 
     @Override
     public String getTypeString() {
-        return "sctelegram_chat_permissions";
+        return "telegram_chat_permissions";
     }
 }

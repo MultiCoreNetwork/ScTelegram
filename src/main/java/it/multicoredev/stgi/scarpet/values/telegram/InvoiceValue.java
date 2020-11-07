@@ -21,6 +21,6 @@ public class InvoiceValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_invoice";
+        return "telegram_invoice";
     }
 }

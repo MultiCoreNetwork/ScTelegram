@@ -26,6 +26,6 @@ public class GameValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_game";
+        return "telegram_game";
     }
 }

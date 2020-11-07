@@ -22,6 +22,6 @@ public class MessageEntityValue extends ScTelegramValue {
 
     @Override
     public String getTypeString() {
-        return "sctelegram_message_entity";
+        return "telegram_message_entity";
     }
 }

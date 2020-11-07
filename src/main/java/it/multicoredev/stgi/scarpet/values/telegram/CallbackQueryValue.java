@@ -24,6 +24,6 @@ public class CallbackQueryValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_callback_query";
+        return "telegram_callback_query";
     }
 }

@@ -25,6 +25,6 @@ public class InlineKeyboardButtonValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_inline_keyboard_button";
+        return "telegram_inline_keyboard_button";
     }
 }

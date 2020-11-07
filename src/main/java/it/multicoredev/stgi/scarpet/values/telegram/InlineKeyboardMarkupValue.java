@@ -23,6 +23,6 @@ public class InlineKeyboardMarkupValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_inline_keyboard_markup";
+        return "telegram_inline_keyboard_markup";
     }
 }

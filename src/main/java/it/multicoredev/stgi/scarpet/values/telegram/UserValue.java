@@ -26,6 +26,6 @@ public class UserValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_user";
+        return "telegram_user";
     }
 }

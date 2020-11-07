@@ -24,6 +24,6 @@ public class PreCheckoutQueryValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_pre_checkout_query";
+        return "telegram_pre_checkout_query";
     }
 }

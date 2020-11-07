@@ -17,6 +17,6 @@ public class BotCommandValue extends ScTelegramValue {
 
     @Override
     public String getTypeString() {
-        return "sctelegram_bot_command";
+        return "telegram_bot_command";
     }
 }

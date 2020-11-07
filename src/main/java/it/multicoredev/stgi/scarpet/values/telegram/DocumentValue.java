@@ -22,6 +22,6 @@ public class DocumentValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_document";
+        return "telegram_document";
     }
 }

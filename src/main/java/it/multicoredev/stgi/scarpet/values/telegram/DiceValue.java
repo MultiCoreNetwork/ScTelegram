@@ -19,6 +19,6 @@ public class DiceValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_dice";
+        return "telegram_dice";
     }
 }

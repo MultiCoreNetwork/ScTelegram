@@ -26,6 +26,6 @@ public class VideoValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_video";
+        return "telegram_video";
     }
 }

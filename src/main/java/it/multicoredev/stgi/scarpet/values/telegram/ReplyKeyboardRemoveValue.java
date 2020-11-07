@@ -19,6 +19,6 @@ public class ReplyKeyboardRemoveValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_reply_keyboard_remove";
+        return "telegram_reply_keyboard_remove";
     }
 }

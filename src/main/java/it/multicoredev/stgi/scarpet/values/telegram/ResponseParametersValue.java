@@ -18,6 +18,6 @@ public class ResponseParametersValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_response_parameters";
+        return "telegram_response_parameters";
     }
 }

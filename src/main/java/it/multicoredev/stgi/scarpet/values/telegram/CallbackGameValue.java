@@ -12,6 +12,6 @@ public class CallbackGameValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_callback_game";
+        return "telegram_callback_game";
     }
 }

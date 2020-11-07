@@ -20,6 +20,6 @@ public class KeyboardButtonValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_keyboard_button";
+        return "telegram_keyboard_button";
     }
 }

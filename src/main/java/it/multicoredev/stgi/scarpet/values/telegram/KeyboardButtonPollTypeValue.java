@@ -16,6 +16,6 @@ public class KeyboardButtonPollTypeValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_keyboard_button_type";
+        return "telegram_keyboard_button_type";
     }
 }

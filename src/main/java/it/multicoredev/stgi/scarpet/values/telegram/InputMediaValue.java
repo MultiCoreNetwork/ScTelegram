@@ -12,6 +12,6 @@ public class InputMediaValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_input_media";
+        return "telegram_input_media";
     }
 }

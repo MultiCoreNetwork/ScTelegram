@@ -24,6 +24,6 @@ public class SuccessfulPaymentValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_successful_payment";
+        return "telegram_successful_payment";
     }
 }

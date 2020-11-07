@@ -21,6 +21,6 @@ public class ChosenInlineQueryValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_chosen_inline_query";
+        return "telegram_chosen_inline_query";
     }
 }

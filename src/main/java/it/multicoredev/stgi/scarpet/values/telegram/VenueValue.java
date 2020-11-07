@@ -23,6 +23,6 @@ public class VenueValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_venue";
+        return "telegram_venue";
     }
 }

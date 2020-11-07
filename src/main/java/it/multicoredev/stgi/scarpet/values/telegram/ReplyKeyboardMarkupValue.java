@@ -27,6 +27,6 @@ public class ReplyKeyboardMarkupValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_reply_keyboard_markup";
+        return "telegram_reply_keyboard_markup";
     }
 }

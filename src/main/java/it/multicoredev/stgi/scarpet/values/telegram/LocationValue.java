@@ -22,6 +22,6 @@ public class LocationValue extends ScTelegramValue {
 
     @Override
     public String getTypeString() {
-        return "sctelegram_location";
+        return "telegram_location";
     }
 }

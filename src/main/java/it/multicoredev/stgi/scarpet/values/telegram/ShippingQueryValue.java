@@ -19,6 +19,6 @@ public class ShippingQueryValue extends ScTelegramValue {
     @Override
     public String getTypeString()
     {
-        return "sctelegram_shipping_query";
+        return "telegram_shipping_query";
     }
 }
