@@ -9,7 +9,6 @@ import org.telegram.telegrambots.meta.api.objects.ChatMember;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import carpet.script.Expression;
 import carpet.script.exception.InternalExpressionException;
@@ -25,6 +24,8 @@ import static java.util.stream.Collectors.toList;
 
 public class Chats {
     public static void apply(Expression expr) {
+        // telegram_get_chat(bot «string», parameters_map «map») => chat «telegram_chat»
+        //
         // telegram_get_chat(bot «string», chat_id «string») => chat «telegram_chat»
         expr.addLazyFunction("telegram_get_chat", 2, (c, t, lv) -> {
             String botName = lv.get(0).evalValue(c).getString();
@@ -43,6 +44,8 @@ public class Chats {
             }
         });
 
+        // telegram_get_chat_administrators(bot «string», parameters_map «map») => chat_list «l(telegram_chat_member)»
+        //
         // telegram_get_chat_administrators(bot «string», chat_id «string») => chat_list «l(telegram_chat_member)»
         expr.addLazyFunction("telegram_get_chat_administrators", 2, (c, t, lv) -> {
             String botName = lv.get(0).evalValue(c).getString();
@@ -61,6 +64,8 @@ public class Chats {
             }
         });
 
+        // telegram_get_chat_member(bot «string», parameters_map «map») => chat_member «telegram_chat_member»
+        //
         // telegram_get_chat_member(bot «string», chat_id «string», user_id «numeric-int») => chat_member «telegram_chat_member»
         expr.addLazyFunction("telegram_get_chat_member", 3, (c, t, lv) -> {
             String botName = lv.get(0).evalValue(c).getString();
@@ -81,6 +86,8 @@ public class Chats {
             }
         });
 
+        // telegram_get_chat_members_count(bot «string», parameters_map «map») => count «numeric-int»
+        //
         // telegram_get_chat_members_count(bot «string», chat_id «string») => count «numeric-int»
         expr.addLazyFunction("telegram_get_chat_members_count", 2, (c, t, lv) -> {
             String botName = lv.get(0).evalValue(c).getString();
@@ -99,6 +106,8 @@ public class Chats {
             }
         });
 
+        // telegram_set_chat_permissions(bot «string», parameters_map «map») => true|false «numeric-bool»
+        //
         // telegram_set_chat_permissions(bot «string», chat_id «string», permissions «telegram_chat_permissions») => true|false «numeric-bool»
         expr.addLazyFunction("telegram_set_chat_permissions", -1, (c, t, lv) -> {
             //TODO Funktion implementieren
@@ -107,6 +116,8 @@ public class Chats {
             };
         });
 
+        // telegram_set_chat_photo(bot «string», parameters_map «map») => true|false «numeric-bool»
+        //
         // telegram_set_chat_photo(bot «string», chat_id «string», photo «telegram_input_file») => true|false «numeric-bool»
         expr.addLazyFunction("telegram_set_chat_photo", -1, (c, t, lv) -> {
             //TODO Funktion implementieren
@@ -115,6 +126,8 @@ public class Chats {
             };
         });
 
+        // telegram_set_chat_title(bot «string», parameters_map «map») => true|false «numeric-bool»
+        //
         // telegram_set_chat_title(bot «string», chat_id «string», title «string») => true|false «numeric-bool»
         expr.addLazyFunction("telegram_set_chat_title", -1, (c, t, lv) -> {
             //TODO Funktion implementieren
@@ -123,6 +136,8 @@ public class Chats {
             };
         });
 
+        // telegram_set_chat_description(bot «string», parameters_map «map») => true|false «numeric-bool»
+        //
         // telegram_set_chat_description(bot «string», chat_id «string», description «string») => true|false «numeric-bool»
         expr.addLazyFunction("telegram_set_chat_description", -1, (c, t, lv) -> {
             //TODO Funktion implementieren
@@ -131,6 +146,8 @@ public class Chats {
             };
         });
 
+        // telegram_set_chat_administrator_custom_title(bot «string», parameters_map «map») => true|false «numeric-bool»
+        //
         // telegram_set_chat_administrator_custom_title(
         //    bot «string»,
         //    chat_id «string»,
@@ -144,6 +161,9 @@ public class Chats {
             };
         });
 
+
+        // telegram_set_chat_sticker_set(bot «string», parameters_map «map») => true|false «numeric-bool»
+        //
         // telegram_set_chat_sticker_set(bot «string», chat_id «string», sticker_set_name «string») => true|false «numeric-bool»
         expr.addLazyFunction("telegram_set_chat_sticker_set", -1, (c, t, lv) -> {
             //TODO Funktion implementieren
@@ -152,6 +172,8 @@ public class Chats {
             };
         });
 
+        // telegram_delete_chat_sticker_set(bot «string», parameters_map «map») => true|false «numeric-bool»
+        //
         // telegram_delete_chat_sticker_set(bot «string», chat_id «string») => true|false «numeric-bool»
         expr.addLazyFunction("telegram_delete_chat_sticker_set", -1, (c, t, lv) -> {
             //TODO Funktion implementieren
@@ -160,6 +182,8 @@ public class Chats {
             };
         });
 
+        // telegram_delete_chat_photo(bot «string», parameters_map «map») => true|false «numeric-bool»
+        //
         // telegram_delete_chat_photo(bot «string», chat_id «string») => true|false «numeric-bool»
         expr.addLazyFunction("telegram_delete_chat_photo", -1, (c, t, lv) -> {
             //TODO Funktion implementieren
@@ -168,6 +192,8 @@ public class Chats {
             };
         });
 
+        // telegram_leave_chat(bot «string», parameters_map «map») => true|false «numeric-bool»
+        //
         // telegram_leave_chat(bot «string», chat_id «string») => true|false «numeric-bool»
         expr.addLazyFunction("telegram_leave_chat", -1, (c, t, lv) -> {
             //TODO Funktion implementieren
@@ -176,6 +202,8 @@ public class Chats {
             };
         });
 
+        // telegram_pin_chat_message(bot «string», parameters_map «map») => true|false «numeric-bool»
+        //
         // telegram_pin_chat_message(
         //    bot «string»,
         //    chat_id «string»,
@@ -189,6 +217,8 @@ public class Chats {
             };
         });
 
+        // telegram_unpin_chat_message(bot «string», parameters_map «map») => true|false «numeric-bool»
+        //
         // telegram_unpin_chat_message(bot «string», chat_id «string», message_id «numeric-int») => true|false «numeric-bool»
         expr.addLazyFunction("telegram_unpin_chat_message", -1, (c, t, lv) -> {
             //TODO Funktion implementieren
@@ -197,6 +227,8 @@ public class Chats {
             };
         });
 
+        // telegram_unpin_all_chat_messages(bot «string», parameters_map «map») => true|false «numeric-bool»
+        //
         // telegram_unpin_all_chat_messages(bot «string», chat_id «string») => true|false «numeric-bool»
         expr.addLazyFunction("telegram_unpin_all_chat_messages", -1, (c, t, lv) -> {
             //TODO Funktion implementieren
@@ -205,6 +237,8 @@ public class Chats {
             };
         });
 
+        // telegram_export_chat_invite_link(bot «string», parameters_map «map») => link «string»
+        //
         // telegram_export_chat_invite_link(bot «string», chat_id «string») => link «string»
         expr.addLazyFunction("telegram_export_chat_invite_link", -1, (c, t, lv) -> {
             //TODO Funktion implementieren

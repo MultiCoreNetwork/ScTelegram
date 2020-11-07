@@ -70,7 +70,10 @@ public class Bot {
             }
         });
 
+        // telegram_set_my_commands(bot «string», parameters_map «map») => true|false «numeric-bool»
+        //
         // telegram_set_my_commands(bot «string», commands «l(telegram_bot_command)») => true|false «numeric-bool»
+        //
         // telegram_set_my_commands(
         //    bot «string»,
         //    command «telegram_bot_command»,
