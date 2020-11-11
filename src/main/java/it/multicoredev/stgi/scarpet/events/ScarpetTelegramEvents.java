@@ -1,5 +1,6 @@
 package it.multicoredev.stgi.scarpet.events;
 
+import carpet.script.value.NullValue;
 import carpet.script.value.NumericValue;
 import it.multicoredev.stgi.scarpet.values.NullableValue;
 import it.multicoredev.stgi.scarpet.values.telegram.*;
@@ -30,9 +31,9 @@ public class ScarpetTelegramEvents extends Event {
         public void onTelegramMessage(String botUsername, Message message, Integer updateId) {
             handler.call(
                     () -> Arrays.asList(
-                            new StringValue(botUsername),
-                            new MessageValue(message),
-                            new NumericValue(updateId)
+                            NullableValue.string(botUsername),
+                            NullableValue.message(message),
+                            NullableValue.numeric(updateId)
                     ),
                     () -> CarpetServer.minecraft_server.getCommandSource()
             );
@@ -44,9 +45,9 @@ public class ScarpetTelegramEvents extends Event {
         public void onTelegramInlineQuery(String botUsername, InlineQuery inlineQuery, Integer updateId) {
             handler.call(
                     () -> Arrays.asList(
-                            new StringValue(botUsername),
-                            new InlineQueryValue(inlineQuery),
-                            new NumericValue(updateId)
+                            NullableValue.string(botUsername),
+                            NullableValue.inlineQuery(inlineQuery),
+                            NullableValue.numeric(updateId)
                     ),
                     () -> CarpetServer.minecraft_server.getCommandSource()
             );
@@ -58,9 +59,9 @@ public class ScarpetTelegramEvents extends Event {
         public void onTelegramChosenInlineQuery(String botUsername, ChosenInlineQuery chosenInlineQuery, Integer updateId) {
             handler.call(
                     () -> Arrays.asList(
-                            new StringValue(botUsername),
-                            new ChosenInlineQueryValue(chosenInlineQuery),
-                            new NumericValue(updateId)
+                            NullableValue.string(botUsername),
+                            NullableValue.chosenInlineQuery(chosenInlineQuery),
+                            NullableValue.numeric(updateId)
                     ),
                     () -> CarpetServer.minecraft_server.getCommandSource()
             );
@@ -72,9 +73,9 @@ public class ScarpetTelegramEvents extends Event {
         public void onTelegramCallbackQuery(String botUsername, CallbackQuery callbackQuery, Integer updateId) {
             handler.call(
                     () -> Arrays.asList(
-                            new StringValue(botUsername),
-                            new CallbackQueryValue(callbackQuery),
-                            new NumericValue(updateId)
+                            NullableValue.string(botUsername),
+                            NullableValue.callbackQuery(callbackQuery),
+                            NullableValue.numeric(updateId)
                     ),
                     () -> CarpetServer.minecraft_server.getCommandSource()
             );
@@ -86,9 +87,9 @@ public class ScarpetTelegramEvents extends Event {
         public void onTelegramMessage(String botUsername, Message message, Integer updateId) {
             handler.call(
                     () -> Arrays.asList(
-                            new StringValue(botUsername),
-                            new MessageValue(message),
-                            new NumericValue(updateId)
+                            NullableValue.string(botUsername),
+                            NullableValue.message(message),
+                            NullableValue.numeric(updateId)
                     ),
                     () -> CarpetServer.minecraft_server.getCommandSource()
             );
@@ -100,9 +101,9 @@ public class ScarpetTelegramEvents extends Event {
         public void onTelegramMessage(String botUsername, Message message, Integer updateId) {
             handler.call(
                     () -> Arrays.asList(
-                            new StringValue(botUsername),
-                            new MessageValue(message),
-                            new NumericValue(updateId)
+                            NullableValue.string(botUsername),
+                            NullableValue.message(message),
+                            NullableValue.numeric(updateId)
                     ),
                     () -> CarpetServer.minecraft_server.getCommandSource()
             );
@@ -114,9 +115,9 @@ public class ScarpetTelegramEvents extends Event {
         public void onTelegramMessage(String botUsername, Message message, Integer updateId) {
             handler.call(
                     () -> Arrays.asList(
-                            new StringValue(botUsername),
-                            new MessageValue(message),
-                            new NumericValue(updateId)
+                            NullableValue.string(botUsername),
+                            NullableValue.message(message),
+                            NullableValue.numeric(updateId)
                     ),
                     () -> CarpetServer.minecraft_server.getCommandSource()
             );
@@ -128,9 +129,9 @@ public class ScarpetTelegramEvents extends Event {
         public void onTelegramShippingQuery(String botUsername, ShippingQuery shippingQuery, Integer updateId) {
             handler.call(
                     () -> Arrays.asList(
-                            new StringValue(botUsername),
-                            new ShippingQueryValue(shippingQuery),
-                            new NumericValue(updateId)
+                            NullableValue.string(botUsername),
+                            NullableValue.shippingQuery(shippingQuery),
+                            NullableValue.numeric(updateId)
                     ),
                     () -> CarpetServer.minecraft_server.getCommandSource()
             );
@@ -142,9 +143,9 @@ public class ScarpetTelegramEvents extends Event {
         public void onTelegramPreCheckoutQuery(String botUsername, PreCheckoutQuery preCheckoutQuery, Integer updateId) {
             handler.call(
                     () -> Arrays.asList(
-                            new StringValue(botUsername),
-                            new PreCheckoutQueryValue(preCheckoutQuery),
-                            new NumericValue(updateId)
+                            NullableValue.string(botUsername),
+                            NullableValue.preCheckoutQuery(preCheckoutQuery),
+                            NullableValue.numeric(updateId)
                     ),
                     () -> CarpetServer.minecraft_server.getCommandSource()
             );
@@ -156,9 +157,9 @@ public class ScarpetTelegramEvents extends Event {
         public void onTelegramPoll(String botUsername, Poll poll, Integer updateId) {
             handler.call(
                     () -> Arrays.asList(
-                            new StringValue(botUsername),
-                            new PollValue(poll),
-                            new NumericValue(updateId)
+                            NullableValue.string(botUsername),
+                            NullableValue.poll(poll),
+                            NullableValue.numeric(updateId)
                     ),
                     () -> CarpetServer.minecraft_server.getCommandSource()
             );
@@ -170,9 +171,9 @@ public class ScarpetTelegramEvents extends Event {
         public void onTelegramPollAnswer(String botUsername, PollAnswer pollAnswer, Integer updateId) {
             handler.call(
                     () -> Arrays.asList(
-                            new StringValue(botUsername),
-                            new PollAnswerValue(pollAnswer),
-                            new NumericValue(updateId)
+                            NullableValue.string(botUsername),
+                            NullableValue.pollAnswer(pollAnswer),
+                            NullableValue.numeric(updateId)
                     ),
                     () -> CarpetServer.minecraft_server.getCommandSource()
             );
@@ -196,7 +197,7 @@ public class ScarpetTelegramEvents extends Event {
                     message = "unknown text type";
                     type = text.getClass().getName();
                 }
-                //if(entity == null) return Arrays.asList(new StringValue(message), new StringValue(type),new NullValue());
+                //if(entity == null) return Arrays.asList(NullableValue.string(message), NullableValue.string(type),new NullValue());
                 return Arrays.asList(NullableValue.string(message), NullableValue.string(type),NullableValue.entity(entity));
 
             }, () -> {
