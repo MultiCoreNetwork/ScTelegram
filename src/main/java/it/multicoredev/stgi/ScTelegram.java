@@ -25,7 +25,7 @@ import carpet.script.bundled.BundledModule;
 
 import it.multicoredev.stgi.config.BotConfig;
 import it.multicoredev.stgi.config.Config;
-import it.multicoredev.stgi.scarpet.ScarpetTelegramEvents;
+import it.multicoredev.stgi.scarpet.events.ScarpetTelegramEvents;
 import it.multicoredev.stgi.scarpet.functions.telegram.Bot;
 import it.multicoredev.stgi.scarpet.functions.telegram.Chats;
 import it.multicoredev.stgi.scarpet.functions.telegram.FileDownload;
