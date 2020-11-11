@@ -1,11 +1,12 @@
 package it.multicoredev.stgi.scarpet.functions.telegram;
 
 import carpet.script.Expression;
-import carpet.script.LazyValue;
 import carpet.script.value.Value;
 
 public class Members {
     public static void apply(Expression expr) {
+        // telegram_kick_chat_member(bot «string», parameters_map «map») => true|false «numeric-bool»
+        //
         // telegram_kick_chat_member(
         //    bot «string»,
         //    chat_id «string»,
@@ -19,8 +20,14 @@ public class Members {
             };
         });
 
-        // telegram_unban_chat_member(bot «string», chat_id «string», user_id «numeric-int»,
-        //    only_if_banned? «numeric-bool») => true|false «numeric-bool»
+        // telegram_unban_chat_member(bot «string», parameters_map «map») => true|false «numeric-bool»
+        //
+        // telegram_unban_chat_member(
+        //    bot «string»,
+        //    chat_id «string»,
+        //    user_id «numeric-int»,
+        //    only_if_banned? «numeric-bool»
+        // ) => true|false «numeric-bool»
         expr.addLazyFunction("telegram_unban_chat_member", -1, (c, t, lv) -> {
             //TODO Funktion implementieren
             return (cc, tt) -> {
@@ -28,6 +35,8 @@ public class Members {
             };
         });
 
+        // telegram_restrict_chat_member(bot «string», parameters_map «map») => true|false «numeric-bool»
+        //
         // telegram_restrict_chat_member(
         //    bot «string»,
         //    chat_id «string»,
@@ -42,6 +51,8 @@ public class Members {
             };
         });
 
+        // telegram_promote_chat_member(bot «string», parameters_map «map») => true|false «numeric-bool»
+        //
         // telegram_promote_chat_member(
         //    bot «string»,
         //    chat_id «string»,
