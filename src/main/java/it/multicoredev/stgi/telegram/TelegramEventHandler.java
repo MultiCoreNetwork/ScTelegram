@@ -1,11 +1,5 @@
 package it.multicoredev.stgi.telegram;
 
-<<<<<<< Updated upstream
-import it.multicoredev.stgi.scarpet.events.ScarpetTelegramUpdateEventHandler;
-import org.telegram.telegrambots.meta.api.objects.Update;
-
-public class TelegramEventHandler {
-=======
 import com.pengrad.telegrambot.UpdatesListener;
 import com.pengrad.telegrambot.model.Update;
 
@@ -14,17 +8,12 @@ import java.util.List;
 import static it.multicoredev.stgi.scarpet.events.ScTelegramEvents.*;
 
 public class TelegramEventHandler implements UpdatesListener {
->>>>>>> Stashed changes
     private String botUsername;
 
     public TelegramEventHandler(String botUsername) {
         this.botUsername = botUsername;
     }
 
-<<<<<<< Updated upstream
-    public void handleTelegramEvent(Update update) {
-        ScarpetTelegramUpdateEventHandler.onUpdateEvent(botUsername, update);
-=======
 
     @Override
     public int process(List<Update> updates) {
@@ -56,6 +45,5 @@ public class TelegramEventHandler implements UpdatesListener {
 
 
         return UpdatesListener.CONFIRMED_UPDATES_ALL;
->>>>>>> Stashed changes
     }
 }

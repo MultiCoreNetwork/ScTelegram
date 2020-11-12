@@ -23,11 +23,7 @@ import carpet.script.CarpetScriptServer;
 import carpet.script.bundled.BundledModule;
 import it.multicoredev.stgi.config.BotConfig;
 import it.multicoredev.stgi.config.Config;
-<<<<<<< Updated upstream
-import it.multicoredev.stgi.scarpet.events.ScarpetTelegramEvents;
-=======
 import it.multicoredev.stgi.scarpet.events.ScTelegramEvents;
->>>>>>> Stashed changes
 import it.multicoredev.stgi.scarpet.functions.telegram.Bot;
 import it.multicoredev.stgi.scarpet.functions.telegram.Chats;
 import it.multicoredev.stgi.scarpet.functions.telegram.FileDownload;
@@ -38,7 +34,7 @@ import it.multicoredev.stgi.telegram.TelegramEventHandler;
 public class ScTelegram implements CarpetExtension {
     public static final String MOD_ID = "sctelegram";
     public static final String MOD_NAME = "ScTelegram";
-    public static final String MOD_VERSION = "0.2.0";
+    public static final String MOD_VERSION = "0.1.0";
 
     public static Map<String, TelegramBot> telegramBots;
 
