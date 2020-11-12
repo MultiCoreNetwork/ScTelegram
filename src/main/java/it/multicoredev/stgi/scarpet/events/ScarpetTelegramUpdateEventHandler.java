@@ -22,7 +22,7 @@ public class ScarpetTelegramUpdateEventHandler {
         if(update.hasChannelPost()) {
             ScarpetTelegramEvents.TELEGRAM_CHANNEL_POST.onTelegramMessage(botUsername, update.getChannelPost(), update.getUpdateId());
         }
-        if(update.hasEditedMessage()) {
+        if(update.hasEditedChannelPost()) {
             ScarpetTelegramEvents.TELEGRAM_EDITED_CHANNEL_POST.onTelegramMessage(botUsername, update.getEditedChannelPost(), update.getUpdateId());
         }
         if(update.hasShippingQuery()) {
