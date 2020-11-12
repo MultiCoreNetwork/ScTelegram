@@ -1,6 +1,10 @@
 package it.multicoredev.stgi.mixins;
 
+<<<<<<< Updated upstream
 import it.multicoredev.stgi.scarpet.events.ScarpetTelegramEvents;
+=======
+import it.multicoredev.stgi.scarpet.events.ScTelegramEvents;
+>>>>>>> Stashed changes
 import net.minecraft.entity.Entity;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.world.ServerWorld;
@@ -26,6 +30,6 @@ public abstract class MinecraftServer_chatEventMixin {
         while(worlds.hasNext() && entity == null) {
             entity = ((ServerWorld)worlds.next()).getEntity(senderUuid);
         }
-        ScarpetTelegramEvents.CHAT_MESSAGE.onChatMessage(message,entity);
+        ScTelegramEvents.CHAT_MESSAGE.onChatMessage(message,entity);
     }
 }

@@ -5,7 +5,7 @@ import carpet.script.value.Value;
 
 public class Members {
     public static void apply(Expression expr) {
-        // telegram_kick_chat_member(bot «string», parameters_map «map») => true|false «numeric-bool»
+        // telegram_kick_chat_member(bot «string», parameters_nbt «nbt») => true|false «numeric-bool»
         //
         // telegram_kick_chat_member(
         //    bot «string»,
@@ -20,7 +20,7 @@ public class Members {
             };
         });
 
-        // telegram_unban_chat_member(bot «string», parameters_map «map») => true|false «numeric-bool»
+        // telegram_unban_chat_member(bot «string», parameters_nbt «nbt») => true|false «numeric-bool»
         //
         // telegram_unban_chat_member(
         //    bot «string»,
@@ -35,7 +35,7 @@ public class Members {
             };
         });
 
-        // telegram_restrict_chat_member(bot «string», parameters_map «map») => true|false «numeric-bool»
+        // telegram_restrict_chat_member(bot «string», parameters_nbt «nbt») => true|false «numeric-bool»
         //
         // telegram_restrict_chat_member(
         //    bot «string»,
@@ -51,7 +51,7 @@ public class Members {
             };
         });
 
-        // telegram_promote_chat_member(bot «string», parameters_map «map») => true|false «numeric-bool»
+        // telegram_promote_chat_member(bot «string», parameters_nbt «nbt») => true|false «numeric-bool»
         //
         // telegram_promote_chat_member(
         //    bot «string»,

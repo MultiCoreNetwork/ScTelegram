@@ -26,13 +26,9 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	modImplementation "carpet:fabric-carpet:${project.minecraft_version}-${project.carpet_core_version}"
 
-	implementation group: 'org.telegram', name: 'telegrambots', version: '5.0.0'
-	include group: 'org.telegram', name: 'telegrambots', version: '5.0.0'
-	shadow group: 'org.telegram', name: 'telegrambots', version: '5.0.0'
-
-	implementation group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.1'
-	include group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.1'
-	shadow group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.1'
+	implementation 'com.github.pengrad:java-telegram-bot-api:5.0.0'
+	include 'com.github.pengrad:java-telegram-bot-api:5.0.0'
+	shadow 'com.github.pengrad:java-telegram-bot-api:5.0.0'
 }
 
 processResources {

@@ -6,7 +6,7 @@ import carpet.script.value.Value;
 
 public class FileDownload {
     public static void apply(Expression expr) {
-        // telegram_get_user_profile_photos(bot «string», parameters_map «map») => user_photos «telegram_user_profile_photos»
+        // telegram_get_user_profile_photos(bot «string», parameters_nbt «nbt») => user_photos «telegram_user_profile_photos»
         //
         // telegram_get_user_profile_photos(bot «string», user_id «numeric-int») => user_photos «telegram_user_profile_photos»
         expr.addLazyFunction("telegram_get_user_profile_photos", -1, (c, t, lv) -> {
@@ -16,7 +16,7 @@ public class FileDownload {
             };
         });
 
-        // telegram_get_file(bot «string», parameters_map «map») => file «telegram_file»
+        // telegram_get_file(bot «string», parameters_nbt «nbt») => file «telegram_file»
         //
         // telegram_get_file(bot «string», file_id «string») => file «telegram_file»
         expr.addLazyFunction("telegram_get_file", -1, (c, t, lv) -> {

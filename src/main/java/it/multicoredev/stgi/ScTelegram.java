@@ -1,13 +1,11 @@
 package it.multicoredev.stgi;
 
-import carpet.script.CarpetExpression;
+import com.pengrad.telegrambot.TelegramBot;
+
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.server.MinecraftServer;
 
 import org.apache.commons.io.IOUtils;
-import org.telegram.telegrambots.meta.TelegramBotsApi;
-import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
-import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -20,28 +18,29 @@ import java.util.Objects;
 
 import carpet.CarpetExtension;
 import carpet.CarpetServer;
+import carpet.script.CarpetExpression;
 import carpet.script.CarpetScriptServer;
 import carpet.script.bundled.BundledModule;
-
 import it.multicoredev.stgi.config.BotConfig;
 import it.multicoredev.stgi.config.Config;
+<<<<<<< Updated upstream
 import it.multicoredev.stgi.scarpet.events.ScarpetTelegramEvents;
+=======
+import it.multicoredev.stgi.scarpet.events.ScTelegramEvents;
+>>>>>>> Stashed changes
 import it.multicoredev.stgi.scarpet.functions.telegram.Bot;
 import it.multicoredev.stgi.scarpet.functions.telegram.Chats;
 import it.multicoredev.stgi.scarpet.functions.telegram.FileDownload;
 import it.multicoredev.stgi.scarpet.functions.telegram.Members;
 import it.multicoredev.stgi.scarpet.functions.telegram.Messages;
-import it.multicoredev.stgi.scarpet.functions.telegram.Stickers;
-import it.multicoredev.stgi.telegram.TelegramBot;
 import it.multicoredev.stgi.telegram.TelegramEventHandler;
 
 public class ScTelegram implements CarpetExtension {
     public static final String MOD_ID = "sctelegram";
     public static final String MOD_NAME = "ScTelegram";
-    public static final String MOD_VERSION = "0.0.2";
+    public static final String MOD_VERSION = "0.2.0";
 
-    public static TelegramBotsApi telegramBotsApi;
-    public static Map<String,TelegramBot> telegramBots;
+    public static Map<String, TelegramBot> telegramBots;
 
     static {
         CarpetServer.manageExtension(new ScTelegram());
@@ -71,31 +70,20 @@ public class ScTelegram implements CarpetExtension {
             System.out.println("File di config loaded from " + configFile);
             Config.getInstance().toFile(configFile.toFile());
             for (BotConfig s : Config.getInstance().BOTS) {
-                try {
-                    TelegramBot telegramBot = new TelegramBot(s.BOT_USERNAME, s.BOT_TOKEN, new TelegramEventHandler(s.BOT_USERNAME));
-                    telegramBots.put(s.BOT_USERNAME, telegramBot);
-                    telegramBotsApi.registerBot(telegramBot);
-                    System.out.println("Collegamento a " + s.BOT_USERNAME + " avvenuto con successo.");
-                } catch (TelegramApiException e) {
-                    System.err.println("Problemi nel collegamento a " + s.BOT_USERNAME + ".");
-                    e.printStackTrace();
-                } catch (IllegalArgumentException e) {
-                    System.err.println("Problemi nel collegamento a " + s.BOT_USERNAME + ".");
-                }
+                TelegramBot telegramBot = new TelegramBot(s.BOT_TOKEN);
+                telegramBot.setUpdatesListener(new TelegramEventHandler(s.BOT_USERNAME));
+                telegramBots.put(s.BOT_USERNAME, telegramBot);
+                System.out.println("Collegamento a " + s.BOT_USERNAME + " avvenuto con successo.");
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+
     public void restartBots() {
-        try {
-            telegramBots = new HashMap<>();
-            telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
-            registerBots();
-        } catch (TelegramApiException e) {
-            e.printStackTrace();
-        }
+        telegramBots = new HashMap<>();
+        registerBots();
     }
 
     @Override
@@ -104,7 +92,7 @@ public class ScTelegram implements CarpetExtension {
     }
 
     public static void noop() {
-        ScarpetTelegramEvents.noop();
+        ScTelegramEvents.noop();
     }
 
     @Override
@@ -123,6 +111,5 @@ public class ScTelegram implements CarpetExtension {
         FileDownload.apply(expression.getExpr());
         Members.apply(expression.getExpr());
         Messages.apply(expression.getExpr());
-        Stickers.apply(expression.getExpr());
     }
 }
