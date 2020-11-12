@@ -7,7 +7,7 @@ import java.util.Arrays;
 import carpet.script.value.StringValue;
 import it.multicoredev.stgi.scarpet.values.NullableValue;
 
-public class InputMediaPhotoValue extends ScTelegramValue {
+public class InputMediaPhotoValue extends InputMediaValue {
     public InputMediaPhotoValue(InputMediaPhoto inputMediaPhoto) {
         super(Arrays.asList(
                 new StringValue("type"),             new StringValue(inputMediaPhoto.getType()),

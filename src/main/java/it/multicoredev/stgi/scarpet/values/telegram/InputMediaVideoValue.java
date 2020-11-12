@@ -3,11 +3,12 @@ package it.multicoredev.stgi.scarpet.values.telegram;
 import org.telegram.telegrambots.meta.api.objects.media.InputMediaVideo;
 
 import java.util.Arrays;
+import java.util.List;
 
 import carpet.script.value.StringValue;
 import it.multicoredev.stgi.scarpet.values.NullableValue;
 
-public class InputMediaVideoValue extends ScTelegramValue {
+public class InputMediaVideoValue extends InputMediaValue {
     public InputMediaVideoValue(InputMediaVideo inputMediaVideo) {
         super(Arrays.asList(
                 new StringValue("type"),               new StringValue(inputMediaVideo.getType()),
@@ -28,4 +29,10 @@ public class InputMediaVideoValue extends ScTelegramValue {
     {
         return "telegram_input_media_video";
     }
+
+    @Override
+    public List<String> getBooleanKeys() { return BOOLEAN_KEYS; }
+    public static final List<String> BOOLEAN_KEYS = Arrays.asList(
+            "supports_streaming"
+    );
 }

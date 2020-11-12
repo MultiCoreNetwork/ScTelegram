@@ -3,6 +3,7 @@ package it.multicoredev.stgi.scarpet.values.telegram;
 import org.telegram.telegrambots.meta.api.objects.ChatMember;
 
 import java.util.Arrays;
+import java.util.List;
 
 import carpet.script.value.StringValue;
 import it.multicoredev.stgi.scarpet.values.NullableValue;
@@ -38,4 +39,25 @@ public class ChatMemberValue extends ScTelegramValue {
     {
         return "telegram_chat_member";
     }
+
+    @Override
+    public List<String> getBooleanKeys() { return BOOLEAN_KEYS; }
+    public static final List<String> BOOLEAN_KEYS = Arrays.asList(
+            "is_anonymous",
+            "can_be_edited",
+            "can_post_messages",
+            "can_edit_messages",
+            "can_delete_messages",
+            "can_restrict_members",
+            "can_promote_members",
+            "can_change_info",
+            "can_invite_users",
+            "can_pin_messages",
+            "is_member",
+            "can_send_messages",
+            "can_send_media_messages",
+            "can_send_polls",
+            "can_send_other_messages",
+            "can_add_web_page_previews"
+    );
 }

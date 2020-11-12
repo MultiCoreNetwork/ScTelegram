@@ -7,7 +7,7 @@ import java.util.Arrays;
 import carpet.script.value.StringValue;
 import it.multicoredev.stgi.scarpet.values.NullableValue;
 
-public class InputMediaAnimationValue extends ScTelegramValue {
+public class InputMediaAnimationValue extends InputMediaValue {
     public InputMediaAnimationValue(InputMediaAnimation inputMediaAnimation) {
         super(Arrays.asList(
                 new StringValue("type"),             new StringValue(inputMediaAnimation.getType()),

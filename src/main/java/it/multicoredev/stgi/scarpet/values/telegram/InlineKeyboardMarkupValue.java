@@ -10,7 +10,7 @@ import carpet.script.value.StringValue;
 import static java.util.stream.Collectors.toList;
 
 
-public class InlineKeyboardMarkupValue extends ScTelegramValue {
+public class InlineKeyboardMarkupValue extends ReplyKeyboardValue {
     public InlineKeyboardMarkupValue(InlineKeyboardMarkup inlineKeyboardMarkup) {
         super(Arrays.asList(
                 new StringValue("emoji"), new ListValue(

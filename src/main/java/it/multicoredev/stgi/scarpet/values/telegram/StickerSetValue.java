@@ -3,6 +3,7 @@ package it.multicoredev.stgi.scarpet.values.telegram;
 import org.telegram.telegrambots.meta.api.objects.stickers.StickerSet;
 
 import java.util.Arrays;
+import java.util.List;
 
 import carpet.script.value.ListValue;
 import carpet.script.value.NumericValue;
@@ -28,4 +29,11 @@ public class StickerSetValue extends ScTelegramValue {
     {
         return "telegram_sticker_set";
     }
+
+    @Override
+    public List<String> getBooleanKeys() { return BOOLEAN_KEYS; }
+    public static final List<String> BOOLEAN_KEYS = Arrays.asList(
+            "is_animated",
+            "contains_masks"
+    );
 }

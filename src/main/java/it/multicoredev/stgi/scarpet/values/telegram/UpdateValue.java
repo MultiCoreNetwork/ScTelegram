@@ -17,7 +17,7 @@ public class UpdateValue extends ScTelegramValue {
                 new StringValue("channel_post"),         NullableValue.message(update.getChannelPost()),
                 new StringValue("edited_channel_post"),  NullableValue.message(update.getEditedChannelPost()),
                 new StringValue("inline_query"),         NullableValue.inlineQuery(update.getInlineQuery()),
-                new StringValue("chosen_inline_result"), NullableValue.chosenInlineQuery(update.getChosenInlineQuery()),
+                new StringValue("chosen_inline_result"), NullableValue.chosenInlineResult(update.getChosenInlineQuery()),
                 new StringValue("callback_query"),       NullableValue.callbackQuery(update.getCallbackQuery()),
                 new StringValue("shipping_query"),       NullableValue.shippingQuery(update.getShippingQuery()),
                 new StringValue("pre_checkout_query"),   NullableValue.preCheckoutQuery(update.getPreCheckoutQuery()),

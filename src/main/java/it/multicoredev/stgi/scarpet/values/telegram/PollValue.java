@@ -3,6 +3,7 @@ package it.multicoredev.stgi.scarpet.values.telegram;
 import org.telegram.telegrambots.meta.api.objects.polls.Poll;
 
 import java.util.Arrays;
+import java.util.List;
 
 import carpet.script.value.ListValue;
 import carpet.script.value.NumericValue;
@@ -35,4 +36,13 @@ public class PollValue extends ScTelegramValue {
     {
         return "telegram_poll";
     }
+
+
+    @Override
+    public List<String> getBooleanKeys() { return BOOLEAN_KEYS; }
+    public static final List<String> BOOLEAN_KEYS = Arrays.asList(
+            "is_closed",
+            "is_anonymous",
+            "allows_multiple_answers"
+    );
 }

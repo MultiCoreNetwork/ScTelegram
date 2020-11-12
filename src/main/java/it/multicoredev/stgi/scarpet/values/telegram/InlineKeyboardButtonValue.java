@@ -3,6 +3,7 @@ package it.multicoredev.stgi.scarpet.values.telegram;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 
 import java.util.Arrays;
+import java.util.List;
 
 import carpet.script.value.NumericValue;
 import carpet.script.value.StringValue;
@@ -27,4 +28,10 @@ public class InlineKeyboardButtonValue extends ScTelegramValue {
     {
         return "telegram_inline_keyboard_button";
     }
+
+    @Override
+    public List<String> getBooleanKeys() { return BOOLEAN_KEYS; }
+    public static final List<String> BOOLEAN_KEYS = Arrays.asList(
+            "pay"
+    );
 }
