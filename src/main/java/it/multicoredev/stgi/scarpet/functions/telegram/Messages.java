@@ -4,25 +4,12 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
-import java.util.Arrays;
-import java.util.List;
-
 import carpet.script.Expression;
 import carpet.script.exception.InternalExpressionException;
-import carpet.script.value.MapValue;
-import carpet.script.value.NumericValue;
-import carpet.script.value.StringValue;
 import carpet.script.value.Value;
 import it.multicoredev.stgi.ScTelegram;
-import it.multicoredev.stgi.scarpet.values.telegram.MessageEntityValue;
 import it.multicoredev.stgi.scarpet.values.telegram.MessageValue;
-import it.multicoredev.stgi.scarpet.values.telegram.ReplyKeyboardValue;
-import it.multicoredev.stgi.scarpet.values.telegram.parameters.ScTelegramParameter;
-import it.multicoredev.stgi.scarpet.values.telegram.parameters.ScTelegramParametersValue;
-import it.multicoredev.stgi.scarpet.values.telegram.parameters.SendMessageValue;
 import it.multicoredev.stgi.telegram.TelegramBot;
-
-import static java.util.stream.Collectors.toList;
 
 public class Messages {
     public static void apply(Expression expr) {
@@ -40,23 +27,19 @@ public class Messages {
         //    allow_sending_without_reply? «null|numeric-bool»,
         //    reply_markup? «null|telegram_inline_keyboard_markup|telegram_reply_keyboard_markup|telegram_reply_keyboard_remove|telegram_force_reply»
         // ) => message «telegram_message»
-        expr.addLazyFunction("telegram_send_message", -1, (c, t, lv) -> {
-            if(lv.size() < 2 || lv.size() > 10)
-                throw new InternalExpressionException("Telegram API Exception");
-            List<Value> parameters = lv.stream().map(a -> a.evalValue(c)).collect(toList());
+        expr.addLazyFunction("telegram_send_message", 3, (c, t, lv) -> {
+            //FIXME Parameterverwaltung
+            String botName = lv.get(0).evalValue(c).getString();
+            String chatID = lv.get(1).evalValue(c).getString();
+            String message_text = lv.get(2).evalValue(c).getString();
 
-            TelegramBot telegramBot = ScTelegram.telegramBots.get(parameters.get(0).getString());
-            if (telegramBot == null) throw new InternalExpressionException("Invalid bot name: " + parameters.get(0).getString());
-
-            SendMessage sendMessage;
-            MapValue parameter_map;
-            if(lv.size() == 2 && parameters.get(1) instanceof MapValue)
-                parameter_map = (MapValue) parameters.get(1);
-            else
-                parameter_map = new SendMessageValue().from(parameters.subList(1,parameters.size()));
-            sendMessage = Util.to(parameter_map,SendMessage.class);
-
+            TelegramBot telegramBot = ScTelegram.telegramBots.get(botName);
+            if (telegramBot == null) throw new InternalExpressionException("Invalid bot name: " + botName);
             try {
+                SendMessage sendMessage = new SendMessage();
+                sendMessage.setChatId(chatID);
+                sendMessage.setText(message_text);
+
                 Message message = telegramBot.execute(sendMessage);
                 return (_c, _t) -> new MessageValue(message);
             } catch (TelegramApiException e) {

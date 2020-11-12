@@ -1,12 +1,7 @@
 package it.multicoredev.stgi.scarpet.values.telegram;
 
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonPrimitive;
-
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 import carpet.script.value.ListValue;
@@ -27,21 +22,4 @@ public class ScTelegramValue extends MapValue {
         }
         return pairList;
     }
-
-    @Override
-    public JsonElement toJson(){
-        List<String> booleanKeys = getBooleanKeys();
-        JsonObject jsonMap = new JsonObject();
-        getMap().forEach((k, v) -> {
-            if(booleanKeys.contains(k.getString())){
-                jsonMap.add(k.getString(), new JsonPrimitive(v.getBoolean()));
-            } else {
-                jsonMap.add(k.getString(), v.toJson());
-            }
-        });
-        return jsonMap;
-    }
-
-    public List<String> getBooleanKeys() { return BOOLEAN_KEYS; }
-    public static final List<String> BOOLEAN_KEYS = Collections.emptyList();
 }

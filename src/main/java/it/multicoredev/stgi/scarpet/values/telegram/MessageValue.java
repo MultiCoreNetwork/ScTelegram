@@ -3,7 +3,6 @@ package it.multicoredev.stgi.scarpet.values.telegram;
 import org.telegram.telegrambots.meta.api.objects.Message;
 
 import java.util.Arrays;
-import java.util.List;
 
 import carpet.script.value.NumericValue;
 import carpet.script.value.StringValue;
@@ -70,13 +69,4 @@ public class MessageValue extends ScTelegramValue {
     public String getTypeString() {
         return "telegram_message";
     }
-
-    @Override
-    public List<String> getBooleanKeys() { return BOOLEAN_KEYS; }
-    public static final List<String> BOOLEAN_KEYS = Arrays.asList(
-            "delete_chat_photo",
-            "group_chat_created",
-            "supergroup_chat_created",
-            "channel_chat_created"
-    );
 }

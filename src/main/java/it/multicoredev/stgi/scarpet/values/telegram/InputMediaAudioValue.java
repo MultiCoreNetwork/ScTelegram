@@ -7,7 +7,7 @@ import java.util.Arrays;
 import carpet.script.value.StringValue;
 import it.multicoredev.stgi.scarpet.values.NullableValue;
 
-public class InputMediaAudioValue extends InputMediaValue {
+public class InputMediaAudioValue extends ScTelegramValue {
     public InputMediaAudioValue(InputMediaAudio inputMediaAudio) {
         super(Arrays.asList(
                 new StringValue("type"),             new StringValue(inputMediaAudio.getType()),

@@ -3,7 +3,6 @@ package it.multicoredev.stgi.scarpet.values.telegram;
 import org.telegram.telegrambots.meta.api.objects.ChatPermissions;
 
 import java.util.Arrays;
-import java.util.List;
 
 import carpet.script.value.StringValue;
 import it.multicoredev.stgi.scarpet.values.NullableValue;
@@ -26,17 +25,4 @@ public class ChatPermissionsValue extends ScTelegramValue {
     public String getTypeString() {
         return "telegram_chat_permissions";
     }
-
-    @Override
-    public List<String> getBooleanKeys() { return BOOLEAN_KEYS; }
-    public static final List<String> BOOLEAN_KEYS = Arrays.asList(
-            "can_send_messages",
-            "can_send_media_messages",
-            "can_send_polls",
-            "can_send_other_messages",
-            "can_add_web_page_previews",
-            "can_change_info",
-            "can_invite_users",
-            "can_pin_messages"
-    );
 }
