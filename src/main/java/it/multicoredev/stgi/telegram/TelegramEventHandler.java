@@ -1,8 +1,7 @@
 package it.multicoredev.stgi.telegram;
 
+import it.multicoredev.stgi.scarpet.events.ScarpetTelegramUpdateEventHandler;
 import org.telegram.telegrambots.meta.api.objects.Update;
-
-import static it.multicoredev.stgi.scarpet.ScarpetTelegramEvents.TELEGRAM_EVENT;
 
 public class TelegramEventHandler {
     private String botUsername;
@@ -12,6 +11,6 @@ public class TelegramEventHandler {
     }
 
     public void handleTelegramEvent(Update update) {
-        TELEGRAM_EVENT.onTelegramEvent(botUsername, update);
+        ScarpetTelegramUpdateEventHandler.onUpdateEvent(botUsername, update);
     }
 }

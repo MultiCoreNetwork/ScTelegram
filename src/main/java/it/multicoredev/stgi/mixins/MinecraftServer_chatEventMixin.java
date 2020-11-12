@@ -1,6 +1,6 @@
 package it.multicoredev.stgi.mixins;
 
-import it.multicoredev.stgi.scarpet.ScarpetTelegramEvents;
+import it.multicoredev.stgi.scarpet.events.ScarpetTelegramEvents;
 import net.minecraft.entity.Entity;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.world.ServerWorld;
