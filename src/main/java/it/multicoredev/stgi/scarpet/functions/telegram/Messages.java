@@ -1,18 +1,5 @@
 package it.multicoredev.stgi.scarpet.functions.telegram;
 
-<<<<<<< Updated upstream
-import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
-import org.telegram.telegrambots.meta.api.objects.Message;
-import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
-
-import carpet.script.Expression;
-import carpet.script.exception.InternalExpressionException;
-import carpet.script.value.Value;
-import it.multicoredev.stgi.ScTelegram;
-import it.multicoredev.stgi.scarpet.values.telegram.MessageValue;
-import it.multicoredev.stgi.telegram.TelegramBot;
-
-=======
 import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
 import com.pengrad.telegrambot.TelegramBot;
@@ -41,7 +28,6 @@ import static it.multicoredev.stgi.scarpet.functions.Util.isTAGList;
 import static it.multicoredev.stgi.scarpet.functions.Util.toNumeric;
 import static java.util.stream.Collectors.toList;
 
->>>>>>> Stashed changes
 public class Messages {
     public static void apply(Expression expr) {
         // telegram_send_message(bot «string», parmeters_nbt «nbt») => message «telegram_message»
@@ -58,26 +44,6 @@ public class Messages {
         //    allow_sending_without_reply? «null|numeric-bool»,
         //    reply_markup? «null|telegram_inline_keyboard_markup|telegram_reply_keyboard_markup|telegram_reply_keyboard_remove|telegram_force_reply»
         // ) => message «telegram_message»
-<<<<<<< Updated upstream
-        expr.addLazyFunction("telegram_send_message", 3, (c, t, lv) -> {
-            //FIXME Parameterverwaltung
-            String botName = lv.get(0).evalValue(c).getString();
-            String chatID = lv.get(1).evalValue(c).getString();
-            String message_text = lv.get(2).evalValue(c).getString();
-
-            TelegramBot telegramBot = ScTelegram.telegramBots.get(botName);
-            if (telegramBot == null) throw new InternalExpressionException("Invalid bot name: " + botName);
-            try {
-                SendMessage sendMessage = new SendMessage();
-                sendMessage.setChatId(chatID);
-                sendMessage.setText(message_text);
-
-                Message message = telegramBot.execute(sendMessage);
-                return (_c, _t) -> new MessageValue(message);
-            } catch (TelegramApiException e) {
-                e.printStackTrace();
-                throw new InternalExpressionException("Telegram API Exception");
-=======
         expr.addLazyFunction("telegram_send_message", -1, (c, t, lv) -> {
             if (lv.size() < 2)
                 throw new InternalExpressionException("'telegram_set_my_commands' requires at least two parameters");
@@ -231,7 +197,6 @@ public class Messages {
                     } else
                         throw new InternalExpressionException("Invalid 'reply_markup' parameter value");
                 }
->>>>>>> Stashed changes
             }
 
             SendResponse response = telegramBot.execute(sendMessage);
